@@ -533,7 +533,19 @@ class _RegisterComplaintFormState extends State<RegisterComplaintForm> {
                             ),
                           ),
                           maxLines: 3,
+                          validator: (value) {
+                            if (value == null || value.trim().isEmpty) {
+                              return 'This field cannot be empty';
+                            }
+                            // Split the input into words and check if the word count is at least 5
+                            final wordCount = value.trim().split(RegExp(r'\s+')).length;
+                            if (wordCount < 5) {
+                              return 'Please enter at least 5 words';
+                            }
+                            return null; // Input is valid
+                          },
                         ),
+
                         const SizedBox(height: 20),
                         ElevatedButton.icon(
                           onPressed: () async {
