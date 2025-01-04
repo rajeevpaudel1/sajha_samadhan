@@ -1,4 +1,4 @@
-# sajha_samadhan
+# Samadhan
 
 A new Flutter project.
 
