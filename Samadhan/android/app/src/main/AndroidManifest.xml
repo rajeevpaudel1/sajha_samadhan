@@ -15,7 +15,7 @@
 
 
     <application
-        android:label="akar"
+        android:label="Sajha Samadhan"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
