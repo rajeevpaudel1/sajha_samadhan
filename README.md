@@ -25,9 +25,8 @@ Sajha Samadhan empowers citizens by providing a simple and efficient platform to
 ## Key Features
 
 - **Cross-Platform**: Built using Flutter, the app works seamlessly on both Android and iOS devices.
-- **Real-Time Tracking**: Citizens can monitor the status of their complaints in real-time.
+- **Tracking**: Citizens can monitor the status of their complaints.
 - **Notifications**: Instant alerts for updates on complaint progress.
-- **Localization**: Supports multiple local languages for broader accessibility.
 - **Secure and Reliable**: Ensures user data privacy with secure storage and communication.
 - **Intuitive Design**: A clean and user-friendly interface for all user groups.
 
