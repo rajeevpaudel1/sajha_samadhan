@@ -32,6 +32,20 @@ Sajha Samadhan empowers citizens by providing a simple and efficient platform to
 
 ---
 
+## Advantages Over Traditional Technologies
+
+| Criteria               | Sajha Samadhan                                     | Traditional Technologies                       |
+| ---------------------- | -------------------------------------------------- | ---------------------------------------------- |
+| Cost-Effectiveness     | Reduces operational costs with digital processes   | High costs due to physical paperwork and labor |
+| Real-Time Updates      | Instant updates on complaint statuses              | Delayed updates due to manual handling         |
+| Accessibility          | Available 24/7 via mobile devices                  | Limited by office hours and physical location  |
+| Transparency           | Tracks complaint progress for all parties          | Lack of visibility fosters distrust            |
+| Data-Driven Insights   | Analyzes complaints to improve governance          | Minimal data collection and analysis           |
+| Multi-Language Support | Supports local languages for inclusivity           | Often limited to a single language             |
+| Privacy & Security     | Protects user data with encryption and secure APIs | Prone to data leaks and unauthorized access    |
+
+---
+
 ## Technology Stack
 
 - **Framework**: Flutter (Dart)
