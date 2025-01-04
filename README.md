@@ -149,12 +149,16 @@ Sajha Samadhan empowers citizens by providing a simple and efficient platform to
 ---
 
 
-## Join Us in Winning the Semi;Colon Hackathon!
+## Join Us in Winning the SEM;COLON Hackathon!
 
-**Sajha Samadhan** is more than just a platform it's a movement towards building stronger, more connected communities. By leveraging collaborative problem-solving, we aim to empower individuals to take action and make a difference in their neighborhoods.
-Your support and feedback are key to making this project a success. Whether you're a developer, mentor, or community leader, your contribution will help us refine Sajha Samadhan and take it to new heights.
-Together, we can transform the way communities solve problems and drive change. Lets bring home the victory at the **Semi;Colon Hackathon** and make Sajha Samadhan a tool for positive impact in communities everywhere!
-Were excited to have you join us on this journey. Lets win this together!
+**"Sajha Samadhan"** is more than just a platform it's a movement towards building stronger, more connected communities. By leveraging collaborative problem-solving, we aim to empower individuals to take action and make a difference in their neighborhoods.
+
+Your support and feedback are key to making this project a success. Whether you're a developer, mentor, or community leader, your contribution will help us refine "Sajha Samadhan" and take it to new heights.
+
+Together, we can transform the way communities solve problems and drive change. Let's bring home the victory at the **SEM;COLON Hackathon** and make "Sajha Samadhan" a tool for positive impact in communities everywhere!
+We're excited to have you join us on this journey.
+
+Let's win this together! ✔✔
 
 ---
 
