@@ -38,11 +38,8 @@ Sajha Samadhan empowers citizens by providing a simple and efficient platform to
 ## Technology Stack
 
 - **Framework**: Flutter (Dart)
-- **State Management**: Provider/Bloc (depending on your architecture)
-- **Backend**: RESTful APIs (or Firebase for serverless backend)
-- **Database**: Firebase Firestore (or any other backend database)
-- **Deployment**: Google Play Store & Apple App Store
-
+- **Backend**: Firebase for serverless backend
+- **Database**: Firebase Firestore
 
 
 ---
