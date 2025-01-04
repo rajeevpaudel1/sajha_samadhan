@@ -264,9 +264,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepPurple),
-                    child: const Text(
-                      'Register',
-                      style: TextStyle(color: Colors.white),
+                    child: Center(
+                      child: const Text(
+                        'Register',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                   const SizedBox(height: 10.0),

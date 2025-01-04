@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'dart:io';
@@ -70,21 +71,46 @@ class _RegisterComplaintFormState extends State<RegisterComplaintForm> {
     });
   }
 
-  Future<List<String>> _uploadImages(List<XFile> images,
-      String complaintId) async {
+  /// Compress Image Function
+  Future<File?> _compressImage(File file) async {
+    final String targetPath = "${file.parent.path}/compressed_${file.uri.pathSegments.last}";
+
+    final result = await FlutterImageCompress.compressAndGetFile(
+      file.absolute.path,
+      targetPath,
+      quality: 70, // Adjust quality as needed
+      minWidth: 800, // Adjust resolution
+      minHeight: 800,
+    );
+
+    return result;
+  }
+
+  /// Upload Images with Compression
+  Future<List<String>> _uploadImages(List<XFile> images, String complaintId) async {
     List<String> downloadUrls = [];
+
     for (var image in images) {
+      // Compress the image before uploading
+      File originalFile = File(image.path);
+      File? compressedFile = await _compressImage(originalFile);
+
+      // Fallback to the original file if compression fails
+      final fileToUpload = compressedFile ?? originalFile;
+
+      // Upload the file to Firebase Storage
       final storageRef = FirebaseStorage.instance
           .ref()
           .child('complaints/$complaintId/${image.name}');
-      final uploadTask = await storageRef.putFile(File(image.path));
+      final uploadTask = await storageRef.putFile(fileToUpload);
       final downloadUrl = await uploadTask.ref.getDownloadURL();
       downloadUrls.add(downloadUrl);
     }
+
     return downloadUrls;
   }
 
-//Picking the images
+  /// Pick Images Function
   Future<void> _pickImage(ImageSource source) async {
     if (source == ImageSource.camera) {
       await Permission.camera.request();
@@ -98,8 +124,7 @@ class _RegisterComplaintFormState extends State<RegisterComplaintForm> {
     }
 
     try {
-      final List<XFile>? images =
-      await _picker.pickMultiImage(imageQuality: 50);
+      final List<XFile>? images = await _picker.pickMultiImage(imageQuality: 50);
 
       if (images != null) {
         if (_selectedImages!.length + images.length <= 3) {
@@ -125,6 +150,7 @@ class _RegisterComplaintFormState extends State<RegisterComplaintForm> {
     }
   }
 
+  /// Request Permission
   Future<PermissionStatus> _requestPermission() async {
     Map<Permission, PermissionStatus> statuses = await [
       Permission.storage,
@@ -141,7 +167,6 @@ class _RegisterComplaintFormState extends State<RegisterComplaintForm> {
     }
     return PermissionStatus.denied;
   }
-
   //validations
 
   String? validateComplaintType(String? value) {
@@ -740,13 +765,14 @@ class _RegisterComplaintFormState extends State<RegisterComplaintForm> {
           ),
           value: _category,
           items: <String>[
-            'Roads and Traffic',
-            'Sidewalks and Pedestrian Areas',
-            'Public Transportation',
-            'Parks and Public Spaces',
-            'Utilities and Infrastructure',
+            'Roads',
+            'Traffic',
+            'Drinking water',
+            'Drainage',
+            'Electricity',
             'Waste Management',
-            'Other',
+            'Animals',
+            'Others'
           ].toSet().map((String value) { // Ensure uniqueness with .toSet()
             return DropdownMenuItem<String>(
               value: value,
@@ -851,47 +877,47 @@ class _RegisterComplaintFormState extends State<RegisterComplaintForm> {
 
   List<String> _getIssueTypesForCategory(String? category) {
     switch (category) {
-      case 'Roads and Traffic':
+      case 'Roads':
         return [
           'Potholes',
           'Road damage',
+          'Obstructed walkway',
+          'Broken sidewalk',
+          'Other',
+        ];
+      case 'Traffic':
+        return [
           'Traffic light malfunction',
           'Street sign issues',
           'Road markings faded',
-          'Flooding on road',
-          'Illegal parking',
           'Other',
         ];
-      case 'Sidewalks and Pedestrian Areas':
+      case 'Drinking water':
         return [
-          'Broken sidewalk',
-          'Obstructed walkway',
-          'Poor lighting',
+          'Water supply interruption',
+          'Contaminated water',
+          'Low water pressure'
+          'Broken pipelines'
+          'Leaking taps or hydrants',
           'Other',
         ];
-      case 'Public Transportation':
+      case 'Drainage':
         return [
-          'Bus stop damage',
-          'Cleanliness issues',
+          'Blocked drains',
+          'Damaged drainage system',
+          'Overflowing drainage',
+          'Foul odor from drains',
+          'Broken manholes',
           'Other',
         ];
-      case 'Parks and Public Spaces':
+
+      case 'Electricity':
         return [
-          'Damaged playground equipment',
-          'Overgrown vegetation',
-          'Vandalism',
-          'Lack of lighting',
-          'Litter or trash',
-          'Other',
-        ];
-      case 'Utilities and Infrastructure':
-        return [
-          'Street light out',
-          'Water leak',
-          'Sewer(wastewater) overflow',
-          'Damaged drain cover',
-          'Fallen power lines',
-          'Fallen Trees',
+          'Power outage',
+          'Faulty streetlights',
+          'Exposed wires',
+          'Voltage fluctuation',
+          'Damaged poles',
           'Other',
         ];
       case 'Waste Management':
@@ -900,6 +926,15 @@ class _RegisterComplaintFormState extends State<RegisterComplaintForm> {
           'Overflowing public trash bin',
           'Illegal dumping',
           'Recycling issues',
+          'Other',
+        ];
+      case 'Animals':
+        return [
+          'Stray animals causing nuisance',
+          'Injured animals needing rescue',
+          'Dead animal disposal',
+          'Overpopulation of stray animals',
+          'Animal cruelty cases',
           'Other',
         ];
 

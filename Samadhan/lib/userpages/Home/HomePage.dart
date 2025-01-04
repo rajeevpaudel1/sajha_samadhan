@@ -218,7 +218,7 @@ class _UserHomePageState extends State<UserHomePage> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "See an issue on the road?",
+                                        "Issue on Community?",
                                         style: TextStyle(
                                           fontSize: constraints.maxWidth * 0.045,
                                           fontWeight: FontWeight.bold,
@@ -227,7 +227,7 @@ class _UserHomePageState extends State<UserHomePage> {
                                       ),
                                       SizedBox(height: constraints.maxHeight * 0.01),
                                       Text(
-                                        "Help improve your community by reporting road problems.",
+                                        "Help improve your community by reporting problems.",
                                         style: TextStyle(
                                           fontSize: constraints.maxWidth * 0.035,
                                           color: Colors.black54,

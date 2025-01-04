@@ -429,11 +429,11 @@ class AboutDialog extends StatelessWidget {
           left: 20,
           right: 20,
           child: CircleAvatar(
-            backgroundColor: Color(0xFF8E354A),
+            backgroundColor: Colors.yellow,
             radius: 45,
             child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(45)),
-              child: Image.asset("assets/akar2.png"),
+              child: Image.asset("assets/Akar_logo.png"),
             ),
           ),
         ),
