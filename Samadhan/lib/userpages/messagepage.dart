@@ -457,46 +457,46 @@ class _RegisterComplaintFormState extends State<RegisterComplaintForm> {
                             });
                           },
                         ),
-                        const SizedBox(height: 17),
-                        TextFormField(
-                          controller: addressController,
-                          decoration: InputDecoration(
-                            labelText: 'Affected Area',
-                            hintText: 'Municipality-Ward, District',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter affected site';
-                            }
-                            return null;
-                          },
-                        ),
+                        // const SizedBox(height: 17),
+                        // TextFormField(
+                        //   controller: addressController,
+                        //   decoration: InputDecoration(
+                        //     labelText: 'Affected Area',
+                        //     hintText: 'Municipality-Ward, District',
+                        //     border: OutlineInputBorder(
+                        //       borderRadius: BorderRadius.circular(10),
+                        //     ),
+                        //   ),
+                        //   validator: (value) {
+                        //     if (value == null || value.isEmpty) {
+                        //       return 'Please enter affected site';
+                        //     }
+                        //     return null;
+                        //   },
+                        // ),
 
-                        const SizedBox(height: 17),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'Landmark',
-                            hintText: 'e.g. near Utech Clz',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          onSaved: (value) => _landmark = value!,
-                        ),
-                        const SizedBox(height: 17),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'Street Name',
-                            hintText: 'e.g. Bishal Chowk',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          onSaved: (value) => _streetName = value!,
-                        ),
+                        // const SizedBox(height: 17),
+                        // TextFormField(
+                        //   decoration: InputDecoration(
+                        //     labelText: 'Landmark',
+                        //     hintText: 'e.g. near Utech Clz',
+                        //     border: OutlineInputBorder(
+                        //       borderRadius: BorderRadius.circular(10),
+                        //     ),
+                        //   ),
+                        //   onSaved: (value) => _landmark = value!,
+                        // ),
+                        // const SizedBox(height: 17),
+                        // TextFormField(
+                        //   decoration: InputDecoration(
+                        //     labelText: 'Street Name',
+                        //     hintText: 'e.g. Bishal Chowk',
+                        //     border: OutlineInputBorder(
+                        //       borderRadius: BorderRadius.circular(10),
+                        //     ),
+                        //   ),
+                        //   onSaved: (value) => _streetName = value!,
+                        // ),
 
                         const SizedBox(height: 20),
                         TextFormField(

@@ -358,18 +358,18 @@ class AboutDialog extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
-                "About AKAR",
+                "About Sajha Samadhan",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
               ),
               SizedBox(height: 15,),
               Text(
-                "RMCS is developed by a group of college students, AKAR, as part of their project to empower citizens to report road-related issues directly through the app, fostering community involvement and enhancing road safety and infrastructure.",
+                "Sajha Samadhan is developed by a group of college students as a Hackathon Project. Sajha Samadhan, as part of their project to empower citizens to report Community Based issues directly through the app, fostering community involvement.",
                 style: TextStyle(fontSize: 14),
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 22,),
               Text(
-                "RMCS App",
+                "Sajha Samadhan App",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
               SizedBox(height: 10,),
@@ -409,7 +409,7 @@ class AboutDialog extends StatelessWidget {
               ),
               SizedBox(height: 10,),
               Text(
-                "© Copyright 2024 All Rights Reserved.",
+                "© Copyright 2025 All Rights Reserved.",
                 style: TextStyle(fontSize: 12, color: Colors.grey),
               ),
               SizedBox(height: 22,),
