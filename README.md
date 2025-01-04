@@ -1,2 +1,5 @@
-# sajha_samadhan
-Sajha Samadhan is a Mobile Application made by using flutter, for solving the community based problems. 
+# Sajha Samadhan
+A citizen-centric local government complaint app designed to streamline the process of lodging, tracking, and resolving community grievances.
+
+ss
+
